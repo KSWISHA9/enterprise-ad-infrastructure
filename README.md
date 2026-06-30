@@ -1,233 +1,207 @@
 # Enterprise Active Directory Infrastructure (INFRA-001)
 
-> Designed and automated an enterprise Active Directory environment for OmniVerse Enterprise using Windows Server 2022, PowerShell, DNS, DHCP, and identity lifecycle automation for 2,000 simulated users.
+![Windows Server](screenshots/01-server-information.png)
 
----
+## Overview
 
-# Overview
+This project documents the design, deployment, and automation of an enterprise Active Directory environment for **OmniVerse Enterprise** using Windows Server 2022.
 
-This project demonstrates the deployment of a simulated enterprise Active Directory environment from the ground up.
-
-The environment was built to mirror how a real enterprise identity team provisions users, organizes Active Directory, automates onboarding, and manages core Windows infrastructure.
-
-Rather than manually creating users and organizational units, the environment leverages PowerShell automation to provision an enterprise-ready Active Directory domain supporting thousands of users.
+The environment simulates a production enterprise by implementing organizational units, role-based access control (RBAC), DNS, DHCP, automated identity provisioning, service accounts, privileged administration, and PowerShell automation.
 
 ---
 
 # Environment
 
 | Component | Value |
-|------------|-------------------------|
+|------------|-------|
 | Operating System | Windows Server 2022 |
+| Domain | corp.omniverse.com |
 | Domain Controller | OV-DC01 |
-| Domain Name | corp.omniverse.com |
-| Active Directory | ✅ |
-| DNS | ✅ |
-| DHCP | ✅ |
-| Users Imported | 2,000 |
+| DNS | Configured |
+| DHCP | Configured |
+| Enterprise Users | 2,000 |
+| Security Groups | Department-Based RBAC |
 | Service Accounts | 5 |
 | Privileged Accounts | 5 |
 | Automation | PowerShell |
 
 ---
 
-# Enterprise Architecture
+# Infrastructure Overview
 
-Architecture diagram coming soon.
+## Domain Controller
 
-```
-                   Internet
-                       │
-                 Windows Server 2022
-                     OV-DC01
-                       │
-      ┌────────────────┼────────────────┐
-      │                │                │
-     DNS             DHCP      Active Directory
-                                        │
-                     Enterprise OU Structure
-                                        │
-                      Security Groups (RBAC)
-                                        │
-                          2,000 HR Users
-                                        │
-                   Automated Provisioning
-```
+![Domain Controller](screenshots/02-domain-controller-validation.png)
 
 ---
 
-# Features
+## Network Configuration
 
-## Active Directory
-
-- Enterprise Domain Controller
-- Organizational Unit hierarchy
-- Department-based Active Directory design
-- PowerShell automation
-- Enterprise naming conventions
+![Network](screenshots/03-network-configuration.png)
 
 ---
 
-## Identity Management
+## Enterprise OU Structure
 
-- Automated HR CSV generation
-- Automated provisioning of 2,000 users
-- Department-based user placement
-- Automated security group assignment
-- Service account management
-- Privileged administrator accounts
+![OU Structure](screenshots/04-enterprise-ou-structure.png)
 
 ---
 
-## Windows Infrastructure
+## Department Structure
 
-- Active Directory Domain Services
-- DNS
-- DHCP
-- Static IP Configuration
-- Enterprise domain configuration
+![Departments](screenshots/05-department-ous.png)
 
 ---
 
-# Automation Workflow
+## Enterprise Security Groups
 
-```text
-HR Export
-      │
-      ▼
-PowerShell Automation
-      │
-      ▼
-Active Directory
-      │
-      ▼
-Organizational Units
-      │
-      ▼
-Department Security Groups
-      │
-      ▼
-Enterprise Identity
-```
+![Security Groups](screenshots/06-security-groups.png)
 
 ---
 
-# PowerShell Scripts
+# HR Identity Source
 
-| Script | Purpose |
-|---------|---------|
-| 01-Build-OU-Structure.ps1 | Creates the enterprise OU hierarchy |
-| 02-Create-Security-Groups.ps1 | Creates enterprise security groups |
-| 03-Generate-HR-CSV.ps1 | Generates the HR employee dataset |
-| 04-Import-HR-Users.ps1 | Imports 2,000 users into Active Directory |
-| 05-Assign-Department-Groups.ps1 | Assigns users to department security groups |
-| 06-Create-Service-Accounts.ps1 | Creates enterprise service accounts |
-| 07-Create-Privileged-Accounts.ps1 | Creates dedicated administrator accounts |
-| 08-Configure-DHCP.ps1 | Configures DHCP scope and options |
+The enterprise HR system exports employee information which is imported into Active Directory using PowerShell automation.
+
+![HR CSV](screenshots/07-hr-csv-preview.png)
 
 ---
 
-# Screenshots
+# Automated User Provisioning
 
-The repository includes screenshots demonstrating:
+PowerShell imports every employee, places them into the correct Organizational Unit, and assigns attributes automatically.
 
-- Windows Server Installation
-- Domain Controller Promotion
-- Enterprise OU Structure
-- Security Group Creation
-- HR Dataset Generation
-- Automated User Import
-- Department Group Assignment
-- Service Accounts
-- Privileged Administrator Accounts
-- DHCP Configuration
-- DHCP Scope Verification
-- DHCP Management Console
+![Import Summary](screenshots/08-user-import-summary.png)
+
+---
+
+# Department RBAC Assignment
+
+Each user is automatically added to the appropriate department security group.
+
+![Group Assignment](screenshots/09-department-group-membership.png)
+
+---
+
+# Enterprise Users
+
+The environment contains over 2,000 Active Directory user objects.
+
+![Users](screenshots/10-active-directory-users.png)
+
+---
+
+# Service Accounts
+
+Enterprise service accounts are separated from employee identities.
+
+![Service Accounts](screenshots/11-service-accounts.png)
+
+---
+
+# Privileged Administration
+
+Dedicated privileged administrative accounts are separated from standard user identities.
+
+![Privileged Accounts](screenshots/12-privileged-admin-accounts.png)
+
+---
+
+# DHCP Infrastructure
+
+## DHCP Console
+
+![DHCP](screenshots/13-dhcp-console.png)
+
+---
+
+## DHCP Scope
+
+![DHCP Scope](screenshots/14-dhcp-scope.png)
+
+---
+
+## DHCP Configuration
+
+![DHCP Options](screenshots/15-dhcp-options.png)
+
+---
+
+# Enterprise Statistics
+
+![Statistics](screenshots/18-enterprise-statistics.png)
+
+---
+
+# Enterprise Administrative Accounts
+
+![Admins](screenshots/19-privileged-admin-accounts-ou.png)
+
+---
+
+# PowerShell Automation
+
+## Included Scripts
+
+- 01-Install-ADDS.ps1
+- 02-Network-Configuration.ps1
+- 03-Promote-Domain-Controller.ps1
+- 04-Build-OU-Structure.ps1
+- 05-Create-Security-Groups.ps1
+- 06-Generate-HR-CSV.ps1
+- 07-Import-HR-Users.ps1
+- 08-Assign-Department-Groups.ps1
+- 09-Create-Service-Accounts.ps1
+- 10-Create-Privileged-Accounts.ps1
+- 11-Configure-DHCP.ps1
 
 ---
 
 # Skills Demonstrated
 
-- Active Directory Administration
-- Windows Server 2022
+- Windows Server Administration
+- Active Directory Domain Services
+- Organizational Unit Design
 - DNS Administration
 - DHCP Administration
+- Role-Based Access Control (RBAC)
 - Identity Lifecycle Management
 - PowerShell Automation
-- RBAC Design
-- Enterprise OU Design
-- User Provisioning
-- Enterprise Identity Management
-- Infrastructure Automation
+- Enterprise Identity Provisioning
+- Service Account Management
+- Privileged Access Management
+- Enterprise Documentation
 
 ---
 
-# Results
+# Project Outcome
 
-✅ Deployed Windows Server 2022 Domain Controller
+✔ Windows Server 2022 deployed
 
-✅ Configured Active Directory Domain Services
+✔ Active Directory Domain Services installed
 
-✅ Configured DNS
+✔ Enterprise Domain Controller promoted
 
-✅ Configured DHCP
+✔ DNS configured
 
-✅ Built Enterprise OU Structure
+✔ DHCP configured
 
-✅ Created Department Security Groups
+✔ Enterprise OU hierarchy created
 
-✅ Generated HR Dataset
+✔ Department security groups created
 
-✅ Imported 2,000 Active Directory Users
+✔ HR employee dataset generated
 
-✅ Automated Department Group Assignment
+✔ 2,000 enterprise users imported
 
-✅ Created Enterprise Service Accounts
+✔ RBAC group assignment automated
 
-✅ Created Privileged Administrator Accounts
+✔ Service accounts created
 
----
+✔ Privileged administration implemented
 
-# Future Enhancements
-
-The following projects will build on this enterprise environment:
-
-- Enterprise File Server
-- AGDLP Implementation
-- Group Policy Objects (GPOs)
-- Microsoft Entra Connect
-- Hybrid Identity
-- Microsoft Sentinel
-- Azure Infrastructure
-- Identity Governance
-- Zero Trust Architecture
+✔ Enterprise infrastructure documented
 
 ---
 
-# Related Projects
-
-This repository is part of the OmniVerse Enterprise portfolio.
-
-- OmniVerse Enterprise
-- Enterprise Network Infrastructure
-- Windows Infrastructure Services
-- Hybrid Identity Engineering
-- Identity Lifecycle Automation
-- Zero Trust Identity Security
-- Identity Governance
-- Enterprise Azure Infrastructure
-- Enterprise Vulnerability Management
-- Security Operations & Threat Detection
-- Governance, Risk & Compliance
-
----
-
-# Author
-
-**Keshawn Lynch**
-
-Information Technology Graduate
-
-Identity & Access Management (IAM)
-
-Cybersecurity | Windows Infrastructure | Microsoft Entra ID | Active Directory | PowerShell
+Created by **Keshawn Lynch**
