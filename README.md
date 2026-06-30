@@ -31,31 +31,31 @@ The environment simulates a production enterprise by implementing organizational
 
 ## Domain Controller
 
-![Domain Controller](screenshots/02-domain-controller-validation.png)
+![Domain Controller](screenshots/03-domain-controller-validation.png)
 
 ---
 
 ## Network Configuration
 
-![Network](screenshots/03-network-configuration.png)
+![Network](screenshots/04-network-configuration.png)
 
 ---
 
 ## Enterprise OU Structure
 
-![OU Structure](screenshots/04-enterprise-ou-structure.png)
+![OU Structure](screenshots/05-enterprise-ou-structure.png)
 
 ---
 
 ## Department Structure
 
-![Departments](screenshots/05-department-ous.png)
+![Departments](screenshots/06-department-ous.png)
 
 ---
 
 ## Enterprise Security Groups
 
-![Security Groups](screenshots/06-security-groups.png)
+![Security Groups](screenshots/07-security-groups.png)
 
 ---
 
@@ -63,7 +63,7 @@ The environment simulates a production enterprise by implementing organizational
 
 The enterprise HR system exports employee information which is imported into Active Directory using PowerShell automation.
 
-![HR CSV](screenshots/07-hr-csv-preview.png)
+![HR CSV](screenshots/08-hr-csv-preview.png)
 
 ---
 
@@ -71,7 +71,7 @@ The enterprise HR system exports employee information which is imported into Act
 
 PowerShell imports every employee, places them into the correct Organizational Unit, and assigns attributes automatically.
 
-![Import Summary](screenshots/08-user-import-summary.png)
+![Import Summary](screenshots/09-user-import-summary.png)
 
 ---
 
@@ -79,7 +79,7 @@ PowerShell imports every employee, places them into the correct Organizational U
 
 Each user is automatically added to the appropriate department security group.
 
-![Group Assignment](screenshots/09-department-group-membership.png)
+![Group Assignment](screenshots/10-department-group-membership.png)
 
 ---
 
@@ -87,7 +87,7 @@ Each user is automatically added to the appropriate department security group.
 
 The environment contains over 2,000 Active Directory user objects.
 
-![Users](screenshots/10-active-directory-users.png)
+![Users](screenshots/11-active-directory-users.png)
 
 ---
 
@@ -95,7 +95,7 @@ The environment contains over 2,000 Active Directory user objects.
 
 Enterprise service accounts are separated from employee identities.
 
-![Service Accounts](screenshots/11-service-accounts.png)
+![Service Accounts](screenshots/12-service-accounts.png)
 
 ---
 
@@ -103,7 +103,7 @@ Enterprise service accounts are separated from employee identities.
 
 Dedicated privileged administrative accounts are separated from standard user identities.
 
-![Privileged Accounts](screenshots/12-privileged-admin-accounts.png)
+![Privileged Accounts](screenshots/13-privileged-admin-accounts.png)
 
 ---
 
@@ -111,7 +111,7 @@ Dedicated privileged administrative accounts are separated from standard user id
 
 ## DHCP Console
 
-![DHCP](screenshots/13-dhcp-console.png)
+![DHCP](screenshots/14-dhcp-console.png)
 
 ---
 
@@ -123,7 +123,7 @@ Dedicated privileged administrative accounts are separated from standard user id
 
 ## DHCP Configuration
 
-![DHCP Options](screenshots/15-dhcp-options.png)
+![DHCP Options](screenshots/16-dhcp-options.png)
 
 ---
 
